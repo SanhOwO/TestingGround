@@ -1,8 +1,8 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
 #include "BehaviorTree/BlackboardComponent.h"
-#include "AIController.h"
 #include "PatrolRoute.h"
+#include "AIController.h"
 #include "CChooseNextWayPoint.h"
 
 EBTNodeResult::Type UCChooseNextWayPoint::ExecuteTask(UBehaviorTreeComponent& OwnerComp, uint8* NodeMemory)
@@ -13,7 +13,7 @@ EBTNodeResult::Type UCChooseNextWayPoint::ExecuteTask(UBehaviorTreeComponent& Ow
 
 	auto AIController = OwnerComp.GetAIOwner();
 	auto ControllerPawn = AIController->GetPawn();
-	auto PatrollingAI = Cast<APatrolRoute>(ControllerPawn);
+	auto PatrollingAI = Cast<UPatrolRoute>(ControllerPawn);
 	TArray<AActor*> PatrolPoints = PatrollingAI->GetPatrolPoints();
 
 	BlackboardComp->SetValueAsObject(WayPointKey.SelectedKeyName, PatrolPoints[Index]);

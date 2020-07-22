@@ -3,30 +3,37 @@
 
 #include "PatrolRoute.h"
 
-// Sets default values
-APatrolRoute::APatrolRoute()
+// Sets default values for this component's properties
+UPatrolRoute::UPatrolRoute()
 {
- 	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
-	PrimaryActorTick.bCanEverTick = true;
+	// Set this component to be initialized when the game starts, and to be ticked every frame.  You can turn these features
+	// off to improve performance if you don't need them.
+	PrimaryComponentTick.bCanEverTick = true;
 
+	// ...
 }
 
-// Called when the game starts or when spawned
-void APatrolRoute::BeginPlay()
+
+// Called when the game starts
+void UPatrolRoute::BeginPlay()
 {
 	Super::BeginPlay();
+
+	// ...
 	
 }
 
-// Called every frame
-void APatrolRoute::Tick(float DeltaTime)
-{
-	Super::Tick(DeltaTime);
 
+// Called every frame
+void UPatrolRoute::TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction)
+{
+	Super::TickComponent(DeltaTime, TickType, ThisTickFunction);
+
+	// ...
 }
 
-TArray<AActor*> APatrolRoute::GetPatrolPoints() const
+TArray<AActor*> UPatrolRoute::GetPatrolPoints() const
 {
-	return PatrolPointsCPP;
+	return PatrolPoints;
 }
 
