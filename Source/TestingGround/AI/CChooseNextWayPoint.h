@@ -18,8 +18,8 @@ class TESTINGGROUND_API UCChooseNextWayPoint : public UBTTaskNode
 
 protected:
 	UPROPERTY(EditAnyWhere, Category = "Blackboard")
-	struct FBlackboardKeySelector IndexKey; //在细节面板添加接口
+	struct FBlackboardKeySelector IndexKey; //锟斤拷细锟斤拷锟斤拷锟斤拷锟接接匡拷
 
 	UPROPERTY(EditAnyWhere, Category = "Blackboard")
-	struct FBlackboardKeySelector WayPointKey; //在细节面板添加接口
+	struct FBlackboardKeySelector WayPointKey; //锟斤拷细锟斤拷锟斤拷锟斤拷锟接接匡拷
 };
